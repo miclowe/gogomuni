@@ -1,0 +1,23 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  line: MyString
+  stop: MyString
+  direction: MyString
+  start_time: 2013-06-03 18:56:13
+  end_time: 2013-06-03 18:56:13
+  walk_duration: 1
+  weekday: false
+  weekend: false
+  pause: false
+
+two:
+  line: MyString
+  stop: MyString
+  direction: MyString
+  start_time: 2013-06-03 18:56:13
+  end_time: 2013-06-03 18:56:13
+  walk_duration: 1
+  weekday: false
+  weekend: false
+  pause: false

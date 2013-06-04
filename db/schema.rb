@@ -11,7 +11,21 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130604014954) do
+ActiveRecord::Schema.define(:version => 20130604015613) do
+
+  create_table "transits", :force => true do |t|
+    t.string   "line"
+    t.string   "stop"
+    t.string   "direction"
+    t.time     "start_time"
+    t.time     "end_time"
+    t.integer  "walk_duration"
+    t.boolean  "weekday"
+    t.boolean  "weekend"
+    t.boolean  "pause"
+    t.datetime "created_at",    :null => false
+    t.datetime "updated_at",    :null => false
+  end
 
   create_table "users", :force => true do |t|
     t.string   "email",                  :default => "", :null => false
