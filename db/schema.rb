@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130605021558) do
+ActiveRecord::Schema.define(:version => 20130605021931) do
 
   create_table "routes", :force => true do |t|
     t.string   "r_tag"
@@ -30,9 +30,6 @@ ActiveRecord::Schema.define(:version => 20130605021558) do
   end
 
   create_table "transits", :force => true do |t|
-    t.string   "line"
-    t.string   "stop"
-    t.string   "direction"
     t.time     "start_time"
     t.time     "end_time"
     t.integer  "walk_duration"
