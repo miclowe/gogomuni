@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  dir_tag: MyString
+  dir_title: MyString
+  stop_tag: MyString
+  stop_title: MyString
+
+two:
+  dir_tag: MyString
+  dir_title: MyString
+  stop_tag: MyString
+  stop_title: MyString
