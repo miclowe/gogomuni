@@ -11,7 +11,14 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130609215052) do
+ActiveRecord::Schema.define(:version => 20130610171315) do
+
+  create_table "directions", :force => true do |t|
+    t.string   "d_tag"
+    t.string   "d_title"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
 
   create_table "rails_admin_histories", :force => true do |t|
     t.text     "message"
@@ -33,13 +40,28 @@ ActiveRecord::Schema.define(:version => 20130609215052) do
     t.datetime "updated_at", :null => false
   end
 
-  create_table "stops", :force => true do |t|
-    t.string   "dir_tag"
-    t.string   "dir_title"
-    t.string   "stop_tag"
-    t.string   "stop_title"
+  create_table "stop_directions", :force => true do |t|
+    t.string   "d_tag"
+    t.string   "d_title"
+    t.string   "s_tag"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
+  end
+
+  create_table "stopdirections", :force => true do |t|
+    t.string   "d_tag"
+    t.string   "s_tag"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
+  create_table "stops", :force => true do |t|
+    t.string   "d_tag"
+    t.string   "s_tag"
+    t.string   "s_title"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+    t.string   "r_tag"
   end
 
   create_table "transits", :force => true do |t|
