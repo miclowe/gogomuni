@@ -1,11 +1,3 @@
-# This file should contain all the record creation needed to seed the database with its default values.
-# The data can then be loaded with the rake db:seed (or created alongside the db with db:setup).
-#
-# Examples:
-#
-#   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
-#   Mayor.create(name: 'Emanuel', city: cities.first)
-
 require 'open-uri'
 
 # Seeds all of the Muni Routes
@@ -23,8 +15,8 @@ end
 
 # Seeds all of the Muni stops and directions
 Stop.delete_all
-Direction.delete_all
-Stopdirection.delete_all
+# Direction.delete_all
+# Stopdirection.delete_all
 
 Route.all.each do |row|
   r_tag = row.r_tag
@@ -42,8 +34,8 @@ Route.all.each do |row|
   directions.each do |d|
     d_title = d.attr('title')
 
-    directions.search("stop").each do |s|
-      stop = Stop.find_by_s_tag(s.attr('title'))
+    d.search("stop").each do |s|
+      stop = Stop.find_by_r_tag_and_s_tag(r_tag, s.attr('tag'))
       stop[:d_title] = d_title
       stop.save!
     end

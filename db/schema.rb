@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130610171315) do
+ActiveRecord::Schema.define(:version => 20130610184233) do
 
   create_table "directions", :force => true do |t|
     t.string   "d_tag"
@@ -40,21 +40,6 @@ ActiveRecord::Schema.define(:version => 20130610171315) do
     t.datetime "updated_at", :null => false
   end
 
-  create_table "stop_directions", :force => true do |t|
-    t.string   "d_tag"
-    t.string   "d_title"
-    t.string   "s_tag"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
-  end
-
-  create_table "stopdirections", :force => true do |t|
-    t.string   "d_tag"
-    t.string   "s_tag"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
-  end
-
   create_table "stops", :force => true do |t|
     t.string   "d_tag"
     t.string   "s_tag"
@@ -62,6 +47,7 @@ ActiveRecord::Schema.define(:version => 20130610171315) do
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
     t.string   "r_tag"
+    t.string   "d_title"
   end
 
   create_table "transits", :force => true do |t|
