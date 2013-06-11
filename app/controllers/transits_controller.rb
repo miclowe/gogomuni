@@ -16,14 +16,14 @@ class TransitsController < ApplicationController
 
   # GET /transits/1
   # GET /transits/1.json
-  def show
-    @transit = Transit.find(params[:id])
+  # def show
+  #   @transit = Transit.find(params[:id])
 
-    respond_to do |format|
-      format.html # show.html.erb
-      format.json { render json: @transit }
-    end
-  end
+  #   respond_to do |format|
+  #     format.html # show.html.erb
+  #     format.json { render json: @transit }
+  #   end
+  # end
 
   # GET /transits/new
   # GET /transits/new.json
@@ -49,7 +49,7 @@ class TransitsController < ApplicationController
 
     respond_to do |format|
       if @transit.save
-        flash[:notice] = "Alert was successfully created"
+        flash[:notice] = "Alert saved!"
         format.html { redirect_to :action => "index" }
         format.json { render json: @transit, status: :created, location: @transit }
       else
@@ -66,7 +66,8 @@ class TransitsController < ApplicationController
 
     respond_to do |format|
       if @transit.update_attributes(params[:transit])
-        format.html { redirect_to @transit, notice: 'Transit was successfully updated.' }
+        flash[:notice] = "Alert updated!"
+        format.html { redirect_to :action => "index" }
         format.json { head :no_content }
       else
         format.html { render action: "edit" }
