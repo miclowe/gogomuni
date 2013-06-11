@@ -6,6 +6,8 @@ Gogomuni::Application.routes.draw do
 
   get '/new_transit', :to => "pages#new_transit"
 
+  resources :transits
+
   get '/about', :to => "pages#about"
 
 

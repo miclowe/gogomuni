@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130611045122) do
+ActiveRecord::Schema.define(:version => 20130611061831) do
 
   create_table "directions", :force => true do |t|
     t.string   "d_title"
@@ -66,6 +66,9 @@ ActiveRecord::Schema.define(:version => 20130611045122) do
     t.string   "route"
     t.string   "stop"
     t.string   "direction"
+    t.integer  "route_id"
+    t.integer  "stop_id"
+    t.integer  "direction_id"
   end
 
   create_table "users", :force => true do |t|
