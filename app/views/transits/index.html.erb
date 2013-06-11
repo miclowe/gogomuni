@@ -1,0 +1,21 @@
+<h1>Listing transits</h1>
+
+<table>
+  <tr>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @transits.each do |transit| %>
+  <tr>
+    <td><%= link_to 'Show', transit %></td>
+    <td><%= link_to 'Edit', edit_transit_path(transit) %></td>
+    <td><%= link_to 'Destroy', transit, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Transit', new_transit_path %>

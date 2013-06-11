@@ -1,3 +1,4 @@
+<h1>New Transit</h1>
 <h3>pick from below</h3>
 
 <%= form_for @transit do |f| %>
@@ -15,3 +16,7 @@
   </div>
   <div class="actions"><%= f.submit %></div>
 <% end %>
+
+<%#= render 'form' %>
+
+<%= link_to 'Back', transits_path %>
