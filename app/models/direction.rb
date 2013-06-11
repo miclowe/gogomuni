@@ -1,6 +1,6 @@
 class Direction < ActiveRecord::Base
-  attr_accessible :d_tag, :d_title, :s_tag
+  attr_accessible :d_title
 
-  has_many :stopdirections
-  has_many :stops, :through => :stopdirection
+  belongs_to :route
+  has_many :stops
 end

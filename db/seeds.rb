@@ -1,5 +1,7 @@
 require 'open-uri'
 
+require 'pry'
+
 # Seeds all of the Muni Routes
 Route.delete_all
 
@@ -15,10 +17,10 @@ end
 
 # Seeds all of the Muni stops and directions
 Stop.delete_all
-# Direction.delete_all
+Direction.delete_all
 # Stopdirection.delete_all
 
-Route.all.each do |row|
+Route.all[0,1].each do |row|
   r_tag = row.r_tag
   url = "http://webservices.nextbus.com/service/publicXMLFeed?command=routeConfig&a=sf-muni&r=" + "#{URI.escape(r_tag)}"
   results = Nokogiri::XML(open(url))
@@ -27,17 +29,21 @@ Route.all.each do |row|
   stops.each do |s|
     s_tag = s.attr('tag')
     s_title = s.attr('title')
-    Stop.create!(:r_tag => r_tag, :s_tag => s_tag, :s_title => s_title)
+    row.stops.create!(:s_tag => s_tag, :s_title => s_title)
   end
 
   directions = results.xpath("//route/direction")
   directions.each do |d|
     d_title = d.attr('title')
+    dir = row.directions.create!(:d_title => d_title)
 
     d.search("stop").each do |s|
-      stop = Stop.find_by_r_tag_and_s_tag(r_tag, s.attr('tag'))
-      stop[:d_title] = d_title
-      stop.save!
+      stop = row.stops.where(:s_tag => s.attr('tag')).first
+
+      if stop.present?
+        stop.direction = dir
+        stop.save!
+      end
     end
   end
 end
