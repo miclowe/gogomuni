@@ -2,7 +2,9 @@
 # See github.com/sferik/rails_admin for more informations
 
 RailsAdmin.config do |config|
-
+  config.authenticate_with do
+    redirect_to(main_app.root_path, flash: {warning: "You must be signed-in as an administrator"}) unless signed_in? && current_user.admin?
+  end
 
   ################  Global configuration  ################
 
@@ -60,15 +62,15 @@ RailsAdmin.config do |config|
 
   #   # Found associations:
 
-  #     configure :stops, :has_many_association 
+  #     configure :stops, :has_many_association
 
   #   # Found columns:
 
-  #     configure :id, :integer 
-  #     configure :r_tag, :string 
-  #     configure :r_title, :string 
-  #     configure :created_at, :datetime 
-  #     configure :updated_at, :datetime 
+  #     configure :id, :integer
+  #     configure :r_tag, :string
+  #     configure :r_title, :string
+  #     configure :created_at, :datetime
+  #     configure :updated_at, :datetime
 
   #   # Cross-section configuration:
 
@@ -108,13 +110,13 @@ RailsAdmin.config do |config|
 
   #   # Found columns:
 
-  #     configure :id, :integer 
-  #     configure :dir_tag, :string 
-  #     configure :dir_title, :string 
-  #     configure :stop_tag, :string 
-  #     configure :stop_title, :string 
-  #     configure :created_at, :datetime 
-  #     configure :updated_at, :datetime 
+  #     configure :id, :integer
+  #     configure :dir_tag, :string
+  #     configure :dir_title, :string
+  #     configure :stop_tag, :string
+  #     configure :stop_title, :string
+  #     configure :created_at, :datetime
+  #     configure :updated_at, :datetime
 
   #   # Cross-section configuration:
 
@@ -150,20 +152,20 @@ RailsAdmin.config do |config|
 
   #   # Found associations:
 
-  #     configure :routes, :has_many_association 
-  #     configure :stops, :has_many_association 
+  #     configure :routes, :has_many_association
+  #     configure :stops, :has_many_association
 
   #   # Found columns:
 
-  #     configure :id, :integer 
-  #     configure :start_time, :time 
-  #     configure :end_time, :time 
-  #     configure :walk_duration, :integer 
-  #     configure :weekday, :boolean 
-  #     configure :weekend, :boolean 
-  #     configure :pause, :boolean 
-  #     configure :created_at, :datetime 
-  #     configure :updated_at, :datetime 
+  #     configure :id, :integer
+  #     configure :start_time, :time
+  #     configure :end_time, :time
+  #     configure :walk_duration, :integer
+  #     configure :weekday, :boolean
+  #     configure :weekend, :boolean
+  #     configure :pause, :boolean
+  #     configure :created_at, :datetime
+  #     configure :updated_at, :datetime
 
   #   # Cross-section configuration:
 
@@ -199,28 +201,28 @@ RailsAdmin.config do |config|
 
   #   # Found associations:
 
-  #     configure :transits, :has_many_association 
+  #     configure :transits, :has_many_association
 
   #   # Found columns:
 
-  #     configure :id, :integer 
-  #     configure :email, :string 
-  #     configure :password, :password         # Hidden 
-  #     configure :password_confirmation, :password         # Hidden 
-  #     configure :reset_password_token, :string         # Hidden 
-  #     configure :reset_password_sent_at, :datetime 
-  #     configure :remember_created_at, :datetime 
-  #     configure :sign_in_count, :integer 
-  #     configure :current_sign_in_at, :datetime 
-  #     configure :last_sign_in_at, :datetime 
-  #     configure :current_sign_in_ip, :string 
-  #     configure :last_sign_in_ip, :string 
-  #     configure :created_at, :datetime 
-  #     configure :updated_at, :datetime 
-  #     configure :first_name, :string 
-  #     configure :last_name, :string 
-  #     configure :phone, :string 
-  #     configure :hue, :string 
+  #     configure :id, :integer
+  #     configure :email, :string
+  #     configure :password, :password         # Hidden
+  #     configure :password_confirmation, :password         # Hidden
+  #     configure :reset_password_token, :string         # Hidden
+  #     configure :reset_password_sent_at, :datetime
+  #     configure :remember_created_at, :datetime
+  #     configure :sign_in_count, :integer
+  #     configure :current_sign_in_at, :datetime
+  #     configure :last_sign_in_at, :datetime
+  #     configure :current_sign_in_ip, :string
+  #     configure :last_sign_in_ip, :string
+  #     configure :created_at, :datetime
+  #     configure :updated_at, :datetime
+  #     configure :first_name, :string
+  #     configure :last_name, :string
+  #     configure :phone, :string
+  #     configure :hue, :string
 
   #   # Cross-section configuration:
 

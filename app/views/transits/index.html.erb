@@ -1,4 +1,5 @@
 <h1>Listing transits</h1>
+<%= flash[:notice] if flash[:notice] %>
 
 <table>
   <tr>
@@ -8,8 +9,14 @@
   </tr>
 
 <% @transits.each do |transit| %>
+
   <tr>
-    <td><%= link_to 'Show', transit %></td>
+    <td>
+    <%= transit.route.r_tag %>
+    <%= transit.direction.d_title %>
+    <%= transit.stop.s_title %>
+    </td>
+    <td><%#= link_to 'Show', transit %></td>
     <td><%= link_to 'Edit', edit_transit_path(transit) %></td>
     <td><%= link_to 'Destroy', transit, method: :delete, data: { confirm: 'Are you sure?' } %></td>
   </tr>

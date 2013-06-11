@@ -1,1 +1,9 @@
 hello
+
+<a href="/transits/new">Set up alert</a>
+
+<% if user_signed_in? %>
+  <%= link_to('Logout', destroy_user_session_path, :method => :delete) %>
+<% else %>
+  <%= link_to 'Already set up an alert?', new_user_session_path %>
+<% end %>

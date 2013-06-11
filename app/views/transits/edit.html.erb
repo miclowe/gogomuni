@@ -1,6 +1,22 @@
-<h1>Editing transit</h1>
+<h1>Edit Alert</h1>
 
-<%= render 'form' %>
+<%= form_for @transit do |f| %>
+  <div class="field">
+    <%= f.label :route_id %><br />
+    <%= f.collection_select :route_id, Route.order(:r_title), :id, :r_title, include_blank: true %>
+  </div>
+  <div class="field">
+    <%= f.label :direction_id %><br />
+    <%= f.grouped_collection_select :direction_id, Route.order(:r_title), :directions, :id, :id, :d_title, include_blank: true %>
+  </div>
+  <div class="field">
+    <%= f.label :stop_id %><br />
+    <%= f.grouped_collection_select :stop_id, Direction.order(:d_title), :stops, :id, :id, :s_title, include_blank: true %>
+  </div>
+  <div class="actions"><%= f.submit %></div>
+<% end %>
+
+<%#= render 'form' %>
 
 <%= link_to 'Show', @transit %> |
 <%= link_to 'Back', transits_path %>

@@ -1,8 +1,12 @@
 class TransitsController < ApplicationController
+
+  before_filter :store_location
+  before_filter :authenticate_user!
+
   # GET /transits
   # GET /transits.json
   def index
-    @transits = Transit.all
+    @transits = current_user.transits
 
     respond_to do |format|
       format.html # index.html.erb
@@ -41,10 +45,12 @@ class TransitsController < ApplicationController
   # POST /transits.json
   def create
     @transit = Transit.new(params[:transit])
+    @transit.user_id = current_user.id
 
     respond_to do |format|
       if @transit.save
-        format.html { redirect_to @transit, notice: 'Transit was successfully created.' }
+        flash[:notice] = "Alert was successfully created"
+        format.html { redirect_to :action => "index" }
         format.json { render json: @transit, status: :created, location: @transit }
       else
         format.html { render action: "new" }
