@@ -4,7 +4,10 @@ Gogomuni::Application.routes.draw do
   devise_for :users
   root :to => "pages#index"
 
-  get '/test', :to => "pages#test"
+  get '/new_transit', :to => "pages#new_transit"
+
+  get '/about', :to => "pages#about"
+
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

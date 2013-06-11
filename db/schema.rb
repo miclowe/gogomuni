@@ -11,14 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130610184233) do
-
-  create_table "directions", :force => true do |t|
-    t.string   "d_tag"
-    t.string   "d_title"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
-  end
+ActiveRecord::Schema.define(:version => 20130610215446) do
 
   create_table "rails_admin_histories", :force => true do |t|
     t.text     "message"
@@ -41,13 +34,13 @@ ActiveRecord::Schema.define(:version => 20130610184233) do
   end
 
   create_table "stops", :force => true do |t|
-    t.string   "d_tag"
     t.string   "s_tag"
     t.string   "s_title"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
     t.string   "r_tag"
     t.string   "d_title"
+    t.string   "d_tag"
   end
 
   create_table "transits", :force => true do |t|
@@ -59,6 +52,9 @@ ActiveRecord::Schema.define(:version => 20130610184233) do
     t.boolean  "pause"
     t.datetime "created_at",    :null => false
     t.datetime "updated_at",    :null => false
+    t.string   "route"
+    t.string   "stop"
+    t.string   "direction"
   end
 
   create_table "users", :force => true do |t|

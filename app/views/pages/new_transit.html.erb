@@ -1,0 +1,32 @@
+<h3>pick from below</h3>
+
+<form method="get">
+  <select name="routes">
+    <%= @routes.each do |route| %>
+      <option value = "<%= route.r_tag %>">
+        <%= route.r_title %>
+      </option>
+    <% end %>
+  </select>
+
+  <select>
+    <%= @stops.each do |stop| %>
+      <option value = "<%= stop.d_title%>">
+        <%= stop.d_title %>
+      </option>
+    <% end %>
+  </select>
+
+  <select>
+    <%= @stops.each do |stop| %>
+      <option value = "<%= stop.s_title%>">
+        <%= stop.s_title %>
+      </option>
+    <% end %>
+  </select>
+</form>
+
+
+
+
+
