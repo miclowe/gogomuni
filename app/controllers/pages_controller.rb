@@ -3,8 +3,6 @@ class PagesController < ApplicationController
   end
 
   def new_transit
-    @routes = Route.all
-    @stops = Stop.all
     @transit = Transit.new
   end
 

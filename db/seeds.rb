@@ -20,7 +20,7 @@ Stop.delete_all
 Direction.delete_all
 # Stopdirection.delete_all
 
-Route.all[0,1].each do |row|
+Route.all.each do |row|
   r_tag = row.r_tag
   url = "http://webservices.nextbus.com/service/publicXMLFeed?command=routeConfig&a=sf-muni&r=" + "#{URI.escape(r_tag)}"
   results = Nokogiri::XML(open(url))

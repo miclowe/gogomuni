@@ -4,8 +4,6 @@ Gogomuni::Application.routes.draw do
   devise_for :users
   root :to => "pages#index"
 
-  get '/new_transit', :to => "pages#new_transit"
-
   resources :transits
 
   get '/about', :to => "pages#about"
