@@ -1,10 +1,19 @@
-hello
+<div class="container_12">
+  <div id="light_bulb">
+    <img src="/assets/bulb.svg">
+    <img src="/assets/socket.svg">
+  </div>
+  <div class="push_1">
+    <p id="title">Never miss your Muni again</p>
+    <div id="big_button">
+      <a href="/users/sign_up">Set up alert</a>
+    </div>
+    <div id="tracks">
+      <img src="/assets/tracks.svg">
+    </div>
+  </div>
 
-<a href="/transits/new">Set up alert</a>
 
-<% if user_signed_in? %>
-  <%= link_to('Log out', destroy_user_session_path, :method => :delete) %>
-  <%= link_to 'My Alerts', transits_path %>
-<% else %>
-  <%= link_to 'Log in', new_user_session_path %>
-<% end %>
+
+
+</div>

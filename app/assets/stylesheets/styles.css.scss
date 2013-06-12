@@ -1,5 +1,132 @@
-$bg_gray: #f5f5f5;
+$cyan: #1bb9ea;
+$pink: #E54193;
+$yellow: #F9D400;
+$dark_gray: #414042;
+$light_gray: #f5f5f5;
+$font: 'Open Sans';
 
-body {
-  background-color: $bg_gray;
+a {
+  font-family: $font;
+  text-decoration: none;
+  color: $dark_gray;
+}
+
+#nav_container {
+  margin: -10px -10px 0 -10px;
+  padding: 0;
+}
+
+#nav_bar {
+  background-color: $dark_gray;
+  height: 50px;
+  width: 100%;
+  margin: 0;
+}
+
+#nav_bar a {
+  font-family: $font;
+  font-size: 16px;
+  font-weight: 600px;
+  color: white;
+  text-decoration: none;
+  padding-right: 10px;
+}
+
+#title {
+  font-family: $font;
+  font-weight: 800;
+  font-size: 50px;
+  text-align: center;
+  margin-top: 100px;
+  margin-bottom: 50px;
+}
+
+#big_button {
+  width: 200px;
+  background-color: $cyan;
+  padding: 10px 20px 10px 20px;
+  border-radius: 10px;
+  text-align: center;
+  font-family: $font;
+  font-weight: 600;
+  font-size: 20px;
+  margin: auto;
+}
+
+#big_button a {
+  text-decoration: none;
+  color: white;
+}
+
+#tracks {
+  width: 425px;
+  margin: auto;
+  margin-top: 25px;
+}
+
+#light_bulb {
+  margin-top: -25px;
+  float: left;
+}
+
+#light_bulb img {
+  width: 130%;
+  display: block;
+}
+
+.feature_icon {
+  width: 200px;
+  margin: auto;
+  margin-top: 30px;
+  text-align: center;
+  line-height: 1;
+}
+
+.feature_icon img {
+  width: 25%;
+}
+
+.pg_title {
+  font-family: $font;
+  font-size: 14px;
+  text-transform: lowercase;
+  text-align: center;
+  margin: 3px 0 20px 0;
+}
+
+.form_title {
+  font-family: $font;
+  font-size: 15px;
+  color: $dark_gray;
+  margin-bottom: 0px;
+  margin-top: 0px;
+}
+
+.form_field {
+  height: 50px;
+  width: 100%;
+  background-color: $light_gray;
+  border: none;
+  box-shadow: inset 0px 1px 1px #d7d7d7;
+  outline: none;
+  font-family: $font;
+  font-weight: 500;
+  font-size: 25px;
+  margin-bottom: 15px;
+  padding: 5px;
+  box-sizing: border-box;
+}
+
+.submit_btn {
+  height: 70px;
+  width: 100%;
+  color: white;
+  background-color: $cyan;
+  border: none;
+  font-family: $font;
+  font-size: 30px;
+  margin-top: 20px;
+  margin-bottom: 15px;
+  cursor: pointer;
+  border-radius: 30px;
 }
