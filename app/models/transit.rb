@@ -1,5 +1,5 @@
 class Transit < ActiveRecord::Base
-  attr_accessible :direction_id, :end_time, :route_id, :pause, :start_time, :stop_id, :walk_duration, :weekday, :weekend, :user_id
+  attr_accessible :direction_id, :end_time, :route_id, :pause, :start_time, :stop_id, :buffer, :weekday, :weekend, :user_id
 
   belongs_to :user
   belongs_to :route

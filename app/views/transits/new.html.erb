@@ -15,6 +15,17 @@
     <%= f.label :stop_id %><br />
     <%= f.grouped_collection_select :stop_id, Direction.order(:d_title), :stops, :id, :id, :s_title, include_blank: true %>
   </div>
+  <div class="field">
+    When do you want to start getting alerted?
+    <%= f.time_select :start_time, {:ampm => true} %><br />
+  </div>
+  <div class="field">
+    For how long?:
+    <%= f.text_field :end_time %><br />
+  </div>
+  <div class="field">
+    I need to leave <%= f.text_field :buffer %> minutes before the Muni arrives.
+  </div>
   <div class="actions"><%= f.submit %></div>
 <% end %>
 
