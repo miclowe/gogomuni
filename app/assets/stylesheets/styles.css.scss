@@ -194,7 +194,7 @@ a {
   font-size: 15px;
   font-weight: 400;
   box-sizing: border-box;
-  padding: 12px 0 0px 30px;
+  padding: 8px 0 0 30px;
 }
 
 #route {
@@ -208,12 +208,20 @@ a {
   text-align: center;
 }
 
+.time_tag {
+  width: 75px;
+  text-align: center;
+  background-color: $med_gray;
+  padding: 2px;
+  margin-top: 5px;
+}
+
 #actions {
   width: 100px;
   height: 100px;
   float: right;
-  line-height: 75px;
-  margin-top: -60px;
+  line-height: 85px;
+  margin-top: -68px;
   margin-left: 50px;
 }
 
