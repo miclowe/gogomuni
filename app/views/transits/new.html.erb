@@ -22,7 +22,7 @@
       </span>
       minutes away from my stop starting at
       <span class="time_form">
-        <%= f.time_select :start_time, {:default => Time.now, :minute_step => 15, :ampm => true} %>
+        <%= f.time_select :start_time, {:prompt => {:hour => "(Hour)", :minute => "(Min)"}, :minute_step => 15, :ampm => true} %>
       </span>
       .
     </div>
