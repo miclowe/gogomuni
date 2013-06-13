@@ -1,5 +1,4 @@
 require 'open-uri'
-require 'pry'
 
 # Seeds all of the Muni Routes
 Route.delete_all
