@@ -2,6 +2,7 @@ $cyan: #1bb9ea;
 $pink: #E54193;
 $yellow: #F9D400;
 $dark_gray: #414042;
+$med_gray: #A8A8A8;
 $light_gray: #f5f5f5;
 $font: 'Open Sans';
 
@@ -230,7 +231,74 @@ a {
 
 .madlib {
   font-family: $font;
-  font-size: 60px;
+  font-size: 40px;
   font-weight: 400;
-  margin-top: 80px;
+  margin-top: 70px;
+  margin-bottom: 40px;
+  line-height: 70px;
 }
+
+.madlib .time_form {
+  color: $yellow;
+}
+
+select {
+  -webkit-appearance: button;
+  border-radius: 0px;
+  background-position: center right;
+  background-repeat: no-repeat;
+  border: 1px solid $dark_gray;
+  color: $cyan;
+  font-family: $font;
+  font-size: 40px;
+  font-weight: 400;
+  margin: 0;
+  overflow: hidden;
+  text-align: center;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.route_form select {
+  width: 450px;
+  border: none;
+  border-bottom: 4px solid $cyan;
+}
+
+.direction_form select {
+  width: 600px;
+  border: none;
+  border-bottom: 4px solid $cyan;
+}
+
+.stop_form select {
+  width: 600px;
+  border: none;
+  border-bottom: 4px solid $cyan;
+}
+
+.time_form select {
+  color: $yellow;
+  width: 125px;
+  border: none;
+  border-bottom: 4px solid $yellow;
+}
+
+.minute_form input {
+  border-radius: 0px;
+  background-position: center right;
+  background-repeat: no-repeat;
+  border: none;
+  border-bottom: 4px solid $pink;
+  color: $pink;
+  font-family: $font;
+  font-size: 35px;
+  font-weight: 400;
+  margin: 0;
+  overflow: hidden;
+  text-align: center;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  width: 50px;
+}
+

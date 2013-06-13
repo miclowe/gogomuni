@@ -1,31 +1,34 @@
-
-<h1>Edit Alert</h1>
-
-<%= form_for @transit do |f| %>
-  <div class="field">
-    <%= f.label :route_id %><br />
-    <%= f.collection_select :route_id, Route.order(:r_title), :id, :r_title, include_blank: true %>
-  </div>
-  <div class="field">
-    <%= f.label :direction_id %><br />
-    <%= f.grouped_collection_select :direction_id, Route.order(:r_title), :directions, :id, :id, :d_title, include_blank: true %>
-  </div>
-  <div class="field">
-    <%= f.label :stop_id %><br />
-    <%= f.grouped_collection_select :stop_id, Direction.order(:d_title), :stops, :id, :id, :s_title, include_blank: true %>
-  </div>
-  <div class="field">
-    <%= f.label :buffer %><br />
-    <%= f.text_field :buffer %>
-  </div>
-  <div class="field">
-    <%= f.label :start_time %><br />
-    <%= f.time_select :start_time, {:minute_step => 15, :ampm => true} %>
-  </div>
-  <div class="actions"><%= f.submit %></div>
-<% end %>
-
-<%#= render 'form' %>
-
-<%#= link_to 'Show', @transit %>
-<%= link_to 'Back', transits_path %>
+<div class="container_12">
+  <%= form_for @transit do |f| %>
+    <div class="madlib">
+      I want to take the
+      <span class="route_form">
+          <%= f.collection_select :route_id, Route.order(:r_title), :id, :r_title, :prompt => "(select your Muni line)", include_blank: true %>
+      </span>
+      line that's heading
+      <span class="direction_form">
+        <%= f.grouped_collection_select :direction_id, Route.order(:r_title), :directions, :id, :id, :d_title, :prompt => "(select your direction)", include_blank: true %>
+      </span>
+      from the
+      <span class="stop_form">
+        <%= f.grouped_collection_select :stop_id, Direction.order(:d_title), :stops, :id, :id, :s_title, :prompt => "(select your desired stop)", include_blank: true %>
+      </span>
+      stop.
+      </br>
+      </br>
+      Tell me when the Muni is
+      <span class="minute_form">
+        <%= f.text_field :buffer, :value => 5 %>
+      </span>
+      minutes away from my stop starting at
+      <span class="time_form">
+        <%= f.time_select :start_time, {:default => Time.now, :minute_step => 15, :ampm => true} %>
+      </span>
+      .
+    </div>
+    <div><%= f.submit "Done Editing", :class => "create_btn" %></div>
+  <% end %>
+  <% if user_signed_in? %>
+    <%= link_to 'Back', transits_path %>
+  <% end %>
+</div>
