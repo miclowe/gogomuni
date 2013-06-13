@@ -1,33 +1,25 @@
-<h1>New Transit</h1>
-<h3>pick from below</h3>
+<div class="container_12">
+  <%= form_for @transit do |f| %>
+    <div class="madlib">
+      I want to take the
+        <%= f.collection_select :route_id, Route.order(:r_title), :id, :r_title, include_blank: true %>
+      line that's heading
+        <%= f.grouped_collection_select :direction_id, Route.order(:r_title), :directions, :id, :id, :d_title, include_blank: true %>
+      from
+        <%= f.grouped_collection_select :stop_id, Direction.order(:d_title), :stops, :id, :id, :s_title, include_blank: true %>
+      .
+      Tell me when the Muni is
+        <%= f.text_field :buffer %>
+      minutes away from my stop starting at
+        <%= f.time_select :start_time, {:minute_step => 15, :ampm => true} %>
+      .
+    </div>
+    <div><%= f.submit "Save Alert", :class => "create_btn" %></div>
+  <% end %>
+</div>
+      <% if user_signed_in? %>
+        <%= link_to 'Back', transits_path %>
+      <% end %>
 
-<%= form_for @transit do |f| %>
-  <div class="field">
-    <%= f.label :route_id %><br />
-    <%= f.collection_select :route_id, Route.order(:r_title), :id, :r_title, include_blank: true %>
-  </div>
-  <div class="field">
-    <%= f.label :direction_id %><br />
-    <%= f.grouped_collection_select :direction_id, Route.order(:r_title), :directions, :id, :id, :d_title, include_blank: true %>
-  </div>
-  <div class="field">
-    <%= f.label :stop_id %><br />
-    <%= f.grouped_collection_select :stop_id, Direction.order(:d_title), :stops, :id, :id, :s_title, include_blank: true %>
-  </div>
-  <div class="field">
-    When do you want to start getting alerted?
-    <%= f.time_select :start_time, {:ampm => true} %><br />
-  </div>
-  <div class="field">
-    For how long?:
-    <%= f.text_field :end_time %><br />
-  </div>
-  <div class="field">
-    I need to leave <%= f.text_field :buffer %> minutes before the Muni arrives.
-  </div>
-  <div class="actions"><%= f.submit %></div>
-<% end %>
 
-<%#= render 'form' %>
 
-<%= link_to 'Back', transits_path %>

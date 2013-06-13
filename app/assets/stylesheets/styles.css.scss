@@ -171,6 +171,20 @@ a {
   border-radius: 30px;
 }
 
+.create_btn {
+  height: 70px;
+  width: 250px;
+  color: white;
+  background-color: $cyan;
+  border: none;
+  font-family: $font;
+  font-size: 30px;
+  margin-top: 20px;
+  margin-bottom: 15px;
+  cursor: pointer;
+  border-radius: 30px;
+}
+
 .result {
   width: 70%;
   height: 100px;
@@ -214,27 +228,9 @@ a {
   margin-bottom: 0;
 }
 
-/*td, th {
+.madlib {
   font-family: $font;
-  font-size: 20px;
+  font-size: 60px;
+  font-weight: 400;
+  margin-top: 80px;
 }
-
-td img {
-  width: 25%;
-}
-
-tr td:nth-child(1) {
-   color: $cyan;
-}
-
-tr td:nth-child(n), th:nth-child(n) {
-   text-align: center;
-}
-
-tr td:nth-child(2), th:nth-child(2) {
-   text-align: left;
-}
-
-tr td:nth-child(3), th:nth-child(3) {
-   text-align: left;
-}*/

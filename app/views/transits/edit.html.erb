@@ -14,6 +14,14 @@
     <%= f.label :stop_id %><br />
     <%= f.grouped_collection_select :stop_id, Direction.order(:d_title), :stops, :id, :id, :s_title, include_blank: true %>
   </div>
+  <div class="field">
+    <%= f.label :buffer %><br />
+    <%= f.text_field :buffer %>
+  </div>
+  <div class="field">
+    <%= f.label :start_time %><br />
+    <%= f.time_select :start_time, {:minute_step => 15, :ampm => true} %>
+  </div>
   <div class="actions"><%= f.submit %></div>
 <% end %>
 
