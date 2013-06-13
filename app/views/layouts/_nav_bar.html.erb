@@ -1,12 +1,13 @@
 <div>
   <div id="nav_bar">
-    <a href="/"><img src="/assets/logo.svg"></a>
-
-    <% if user_signed_in? %>
-      <%= link_to 'My Alerts', transits_path %>
-      <%= link_to('Log out', destroy_user_session_path, :method => :delete) %>
-    <% else %>
-      <%= link_to 'Log in', new_user_session_path %>
-    <% end %>
+      <td><a href="/"><img src="/assets/logo.svg"></a>
+      <span>
+      <% if user_signed_in? %>
+        <%= link_to 'My Alerts', transits_path %>
+        <%= link_to('Log out', destroy_user_session_path, :method => :delete) %>
+      <% else %>
+        <%= link_to 'Log in', new_user_session_path %>
+      <% end %>
+      </span>
   </div>
 </div>

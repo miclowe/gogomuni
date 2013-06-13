@@ -1,28 +1,39 @@
-<h1>Listing transits</h1>
-<%= flash[:notice] if flash[:notice] %>
+<div class="container_12">
+  <div class="list_title grid_4 push_2">Saved Muni Alerts</div>
+  <%= flash[:notice] if flash[:notice] %>
+  <div class="grid_5 push_2 white" id="new_button">
+    <%= link_to 'Add New Alert', new_transit_path, :class => "white" %>
+  </div>
+<div>
+  <% @transits.each do |transit| %>
+    <div class="grid_8 push_2">
 
-<table>
-  <tr>
-    <th></th>
-    <th></th>
-    <th></th>
-  </tr>
+      <div id="route">
+        <%= transit.route.r_tag %>
+      </div>
 
-<% @transits.each do |transit| %>
+      <div class="result">
+        <div>
+          Heading <%= transit.direction.d_title %>
+        </div>
 
-  <tr>
-    <td>
-    <%= transit.route.r_tag %>
-    <%= transit.direction.d_title %>
-    <%= transit.stop.s_title %>
-    </td>
-    <td><%#= link_to 'Show', transit %></td>
-    <td><%= link_to 'Edit', edit_transit_path(transit) %></td>
-    <td><%= link_to 'Destroy', transit, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-  </tr>
-<% end %>
-</table>
+        <div>
+          From <%= transit.stop.s_title %>
+        </div>
+        <dt>Start time</dt>
+        <dd class="grid_2">
+          <%= transit.start_time %>
+        </dd>
+        <div class="push_1" id="actions">
+            <%= link_to image_tag('/assets/edit.svg'), edit_transit_path(transit) %>
+            <%= link_to image_tag('/assets/trashcan.svg'), transit, method: :delete, data: { confirm: 'Are you sure?' } %>
+        </div>
+      </div>
+      <div class="rule"></div>
+    </div>
+  <% end %>
+</div>
+<div>
 
-<br />
-
-<%= link_to 'New Transit', new_transit_path %>
+</div>
+</div>

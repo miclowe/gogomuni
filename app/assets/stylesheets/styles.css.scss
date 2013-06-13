@@ -11,6 +11,10 @@ a {
   color: $dark_gray;
 }
 
+.white {
+  color: white;
+}
+
 #nav_container {
   margin: -10px -10px 0 -10px;
   padding: 0;
@@ -23,13 +27,27 @@ a {
   margin: 0;
 }
 
+#nav_bar span {
+  float: right;
+  margin-right: 200px;
+}
+
 #nav_bar a {
   font-family: $font;
   font-size: 16px;
   font-weight: 600px;
   color: white;
-  text-decoration: none;
-  padding-right: 10px;
+  display: inline;
+  float: right;
+  padding-right: 20px;
+  line-height: 50px;
+}
+
+#nav_bar img {
+  display: inline;
+  position: absolute;
+  left: 200px;
+  top: 5px;
 }
 
 #title {
@@ -41,20 +59,35 @@ a {
   margin-bottom: 50px;
 }
 
-#big_button {
+.big_button {
   width: 200px;
   background-color: $cyan;
   padding: 10px 20px 10px 20px;
-  border-radius: 10px;
+  border-radius: 30px;
   text-align: center;
   font-family: $font;
   font-weight: 600;
   font-size: 20px;
   margin: auto;
+  color: white;
 }
 
-#big_button a {
-  text-decoration: none;
+#new_button {
+  width: 200px;
+  height: 100%;
+  margin-bottom: 10px;
+  background-color: $cyan;
+  padding: 10px 20px 10px 20px;
+  border-radius: 30px;
+  text-align: center;
+  font-family: $font;
+  font-weight: 600;
+  font-size: 20px;
+  color: white;
+  margin: 20px 0 50px 0;
+}
+
+.white {
   color: white;
 }
 
@@ -75,7 +108,7 @@ a {
 }
 
 .feature_icon {
-  width: 200px;
+  width: 100%;
   margin: auto;
   margin-top: 30px;
   text-align: center;
@@ -83,7 +116,14 @@ a {
 }
 
 .feature_icon img {
-  width: 25%;
+  width: 6%;
+}
+
+.list_title {
+  font-family: $font;
+  font-size: 30px;
+  font-weight: 600;
+  margin: 20px 0 10px 0;
 }
 
 .pg_title {
@@ -130,3 +170,71 @@ a {
   cursor: pointer;
   border-radius: 30px;
 }
+
+.result {
+  width: 70%;
+  height: 100px;
+  margin: auto;
+  font-family: $font;
+  font-size: 15px;
+  font-weight: 400;
+  box-sizing: border-box;
+  padding: 12px 0 0px 30px;
+}
+
+#route {
+  display: inline-block;
+  font-family: $font;
+  color: $cyan;
+  font-size: 40px;
+  line-height: 90px;
+  float: left;
+  width: 35px;
+  text-align: center;
+}
+
+#actions {
+  width: 100px;
+  height: 100px;
+  float: right;
+  line-height: 75px;
+  margin-top: -60px;
+  margin-left: 50px;
+}
+
+#actions img {
+  width: 20%;
+  padding-right: 10px;
+}
+
+.rule {
+  width: 100%;
+  height: 1px;
+  background-color: $dark_gray;
+  margin-bottom: 0;
+}
+
+/*td, th {
+  font-family: $font;
+  font-size: 20px;
+}
+
+td img {
+  width: 25%;
+}
+
+tr td:nth-child(1) {
+   color: $cyan;
+}
+
+tr td:nth-child(n), th:nth-child(n) {
+   text-align: center;
+}
+
+tr td:nth-child(2), th:nth-child(2) {
+   text-align: left;
+}
+
+tr td:nth-child(3), th:nth-child(3) {
+   text-align: left;
+}*/
