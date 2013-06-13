@@ -10,7 +10,7 @@ class Transit < ActiveRecord::Base
 
   def self.fetch_minutes
     @transits = Transit.all
-    check_start = Time.now - (5 * 60)
+    check_start = Time.now - (10 * 60)
 
     @transits.each do |transit|
       # t_user_id = transit.user_id
@@ -39,12 +39,16 @@ class Transit < ActiveRecord::Base
         t_buffer = transit.buffer
         minutes.each do |m|
           time = m.to_i - t_buffer
+          puts "Buffer: #{time}"
           if (0..1).include?(time)
             puts "red"
+            break
           elsif (2..3).include?(time)
             puts "blink"
+            break
           elsif (4..10).include?(time)
             puts "green"
+            break
           end
         end
       end
