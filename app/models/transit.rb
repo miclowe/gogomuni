@@ -26,7 +26,7 @@ class Transit < ActiveRecord::Base
     minutes = nil
     transit = self
     check_start = Time.now - (30 * 60)
-    g = Huey::Group.new(Huey::Bulb.find(3))
+    g = Huey::Group.new(Huey::Bulb.find(1), Huey::Bulb.find(2), Huey::Bulb.find(3))
     g.name = 'bulbs'
     group = Huey::Group.find('bulbs')
     green = Huey::Event.new(name: 'Turn Green', group: group, actions: {on: true, hue: 25717, sat: 254, bri: 240})
