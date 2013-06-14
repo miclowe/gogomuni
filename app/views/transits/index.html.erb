@@ -23,6 +23,15 @@
         <div class="time_tag">
           <%= transit.start_time.strftime("%I:%M %p") %>
         </div>
+        <%= @minutes.inspect %>
+        <% if @minutes != nil %>
+          <div class="min_tag">
+            <% @minutes.each do |min| %>
+              <%= min %> min away
+            <% end %>
+          </div>
+        <%end%>
+
         <div class="push_1" id="actions">
             <%= link_to image_tag('/assets/edit.svg'), edit_transit_path(transit) %>
             <%= link_to image_tag('/assets/trashcan.svg'), transit, method: :delete, data: { confirm: 'Are you sure?' } %>

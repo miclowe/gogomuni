@@ -8,7 +8,7 @@ scheduler = Rufus::Scheduler.start_new
   # Transit.fetch_minutes
 # end
 
-scheduler.every("1m") do
+scheduler.every("30s") do
   puts "Starting job"
   Transit.fetch_minutes
 end

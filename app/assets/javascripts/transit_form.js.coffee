@@ -1,3 +1,4 @@
+
 jQuery ->
   directions = $('#transit_direction_id').html()
   $('#transit_route_id').change ->
