@@ -11,26 +11,25 @@
       <div id="route">
         <%= transit.route.r_tag %>
       </div>
-
       <div class="result">
         <div>
           Heading <%= transit.direction.d_title %>
         </div>
-
         <div>
           From <%= transit.stop.s_title %>
         </div>
-        <div class="time_tag">
-          <%= transit.start_time.strftime("%I:%M %p") %>
-        </div>
-        <% if  transit.minutes != nil %>
-          <div class="min_tag">
-            <% transit.minutes[0..2].each do |min| %>
-              <%= min %> min away
-            <% end %>
+        <div id="times">
+          <div class="time_tag">
+            <%= transit.start_time.strftime("%I:%M %p") %>
           </div>
-        <%end%>
-
+          <% if  transit.minutes != nil %>
+            <% transit.minutes[0..2].each do |min| %>
+              <div class="min_tag">
+                <%= min %> min away
+              </div>
+            <% end %>
+          <%end%>
+        </div>
         <div class="push_1" id="actions">
             <%= link_to image_tag('/assets/edit.svg'), edit_transit_path(transit) %>
             <%= link_to image_tag('/assets/trashcan.svg'), transit, method: :delete, data: { confirm: 'Are you sure?' } %>

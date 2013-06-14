@@ -11,6 +11,7 @@ jQuery ->
     else
       $('#transit_direction_id').empty()
       $('#transit_direction_id').trigger "change"
+      $('#transit_direction_id').parent().hide()
 
   stops = $('#transit_stop_id').html()
   $('#transit_direction_id').change ->
