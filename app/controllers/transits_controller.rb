@@ -7,7 +7,6 @@ class TransitsController < ApplicationController
   # GET /transits.json
   def index
     @transits = current_user.transits
-
     respond_to do |format|
       format.html # index.html.erb
       format.json { render json: @transits }

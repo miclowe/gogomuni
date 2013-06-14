@@ -23,10 +23,9 @@
         <div class="time_tag">
           <%= transit.start_time.strftime("%I:%M %p") %>
         </div>
-        <%= @minutes.inspect %>
-        <% if @minutes != nil %>
+        <% if  transit.minutes != nil %>
           <div class="min_tag">
-            <% @minutes.each do |min| %>
+            <% transit.minutes[0..2].each do |min| %>
               <%= min %> min away
             <% end %>
           </div>
